@@ -9,7 +9,6 @@ import AuthPage from "./AuthPage";
 import ChatsPage from "./ChatsPage";
 import Desktop from "./Desktop";
 
-
 function RouteElementsDesktop() {
   const routeElements = useRoutes([
     { path: '/', element: <Desktop /> },
@@ -38,9 +37,8 @@ function App() {
     return <AuthPage onAuth={(user) => setUser(user)} />;
   } else {
     return <Fragment>
-      <DesktopApp />
+      <DesktopApp />;
       <ChatsPage user={user} />
-
 
     </Fragment>;
   }

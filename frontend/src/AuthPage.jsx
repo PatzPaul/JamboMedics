@@ -1,26 +1,30 @@
 import axios from 'axios';
-
+import appLogo from './images/amplichat.png';
+import "./App.css";
 
 const AuthPage = (props) => {
   const onSubmit = (e) => {
     e.preventDefault();
     const { value } = e.target[0];
-    axios.post(
-      'http://localhost:3001/authenticate',
-      { username: value }
-    )
-      .then(r => props.onAuth({ ...r.data, secret: value }))
-      .catch(e => console.log('error', e))
+    axios
+      .post('http://localhost:3001/authenticate', { username: value })
+      .then((r) => props.onAuth({ ...r.data, secret: value }))
+      .catch((e) => console.log('error', e));
     props.onAuth({ username: value, secret: value });
   };
 
   return (
     <div className="background">
-      <div className="title">MedicGurus</div>
-
+      
       <form onSubmit={onSubmit} className="form-card">
-        <div className="form-title">Jambo Medics👋<br></br>
-          <p>Always here to help</p></div>
+        <div className="form-title">
+          <div>
+          <img src={appLogo} alt="App Logo" className="logo-image" />
+            Jambo Medics
+            <br />
+            <p>Always here to help</p>
+          </div>
+        </div>
 
         <div className="form-subtitle">Set a username to get started</div>
 

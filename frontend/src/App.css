@@ -4,39 +4,97 @@ body {
   background-size: cover;
   height: 100vh;
   width: 100vw;
-  margin: 0px;
+  margin: 0;
 }
 
 p {
   font-family: cursive;
 }
+
 .background {
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(
+  background-image: linear-gradient(
     75deg,
     rgb(20, 23, 33) 0%,
-    rgb(20, 23, 33) 50%,
-    rgba(20, 23, 33, 0.8) 100%
-  );
+    rgb(100, 105, 121) 50%,
+    rgba(52, 53, 56, 0.8) 100%
+  ), url(https://www.openaccessgovernment.org/wp-content/uploads/2023/03/iStock-1384424275-scaled.jpg);
   /* Vertical center */
-  display: table-cell;
-  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dark-mode-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 20px;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
 }
 
 .form-card {
   width: 50%;
   max-width: 350px;
-  padding: 0% 25% 0% 25%;
+  padding: 0 25%;
 }
 
 .form-title {
   font-size: 42px;
-  font-family: "Avenir";
+  font-family: "cursive";
   font-weight: 800;
   letter-spacing: 0.5px;
   color: #e8e8e8;
   padding-bottom: 12px;
+}
+
+.logo-image {
+  width: 40px;
+  height: auto;
+  margin-right: 10px;
 }
 
 .form-subtitle {
@@ -53,6 +111,7 @@ p {
   width: 100%;
   padding-bottom: 12px;
 }
+
 .auth-label {
   position: absolute;
   top: 8px;
@@ -62,6 +121,7 @@ p {
   font-family: Avenir;
   width: 100px;
 }
+
 .auth-input {
   background-color: #3e404b;
   color: white;
@@ -73,6 +133,7 @@ p {
   width: calc(100% - 18px - 18px);
   margin-bottom: 12px;
 }
+
 .auth-button {
   width: 100%;
   height: 53px;
@@ -87,6 +148,7 @@ p {
   -webkit-transition: all 0.44s ease;
   -moz-transition: all 0.44s ease;
 }
+
 .auth-button:hover {
   filter: brightness(145%);
 }

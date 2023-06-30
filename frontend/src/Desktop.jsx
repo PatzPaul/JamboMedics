@@ -23,6 +23,7 @@ import {
 } from 'react'
 
 import { Context } from './store/Context'
+import PersonalizedHealthcare from './PersonalizedHealthcare'
 
 // props: image
 function FloatImageCol(props) {
@@ -84,6 +85,26 @@ function SectionItemImageOnTheRight(props) {
                 <FloatImageCol image={props.sectionItem.image} />
             </Row>
         </Row>
+    )
+}
+
+function Healthcare(props){
+
+    return (
+        <>
+        {
+          props.sectionList.map((sectionItem, index) => {
+            return (
+                index % 2 === 0 ?
+                    <SectionItemImageOnTheLeft sectionItem={sectionItem} backgroundColor={'white'} />
+                    :
+                    <SectionItemImageOnTheRight sectionItem={sectionItem} backgroundColor={null} />
+            )
+
+        })
+    }
+        
+        </>
     )
 }
 
@@ -221,6 +242,11 @@ function Desktop() {
 
                 {/* section list */}
                 <SectionList sectionList={state.sectionList} />
+
+                {/*Healthcare list */}
+                <Row justify='center'>
+                <PersonalizedHealthcare  healthCare={state.healthCare}/>
+                </Row>
 
 
                 {/* policies */}
