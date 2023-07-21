@@ -63,13 +63,7 @@ const PersonalizedHealthcare = () => {
       <p>
         The AI recommendation system for personalized healthcare treatments needs the following functional requirements:
       </p>
-      <ul>
-        <li>Data Collection and Integration: Gather patient data from various sources and create a unified patient profile.</li>
-        <li>Data Analysis and Machine Learning: Analyze patient data using statistical analysis and machine learning algorithms to generate insights.</li>
-        <li>Personalized Treatment Recommendations: Generate tailored treatment recommendations based on patient data analysis.</li>
-        <li>User Interface and Interaction: Provide an intuitive and user-friendly interface for healthcare professionals to interact with the system and view recommendations.</li>
-        <li>System Integration: Integrate with existing healthcare systems for seamless data exchange and retrieval.</li>
-      </ul>
+      
       <button onClick={collectAndIntegrateData}>Collect and Integrate Data</button>
       <button onClick={analyzeDataAndGenerateRecommendations}>Analyze Data and Generate Recommendations</button>
       <button onClick={handleUserInteraction}>User Interface and Interaction</button>
