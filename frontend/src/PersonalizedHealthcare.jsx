@@ -1,5 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Context } from './store/Context';
+import { Link } from 'react-router-dom';
+import Desktop from './Desktop';
 import './App.css';
 
 const PersonalizedHealthcare = () => {
@@ -11,7 +13,7 @@ const PersonalizedHealthcare = () => {
   const collectAndIntegrateData = () => {
     // Simulated patient data
     const patientData = {
-      name: 'John Doe',
+      name: 'Patrick Senior',
       age: 30,
       gender: 'Male',
       conditions: ['Hypertension', 'Diabetes'],
@@ -46,28 +48,22 @@ const PersonalizedHealthcare = () => {
 
   // Function to handle user interaction and display recommendations
   const handleUserInteraction = () => {
+    window.location.href = 'http://localhost:3000';
     // Code to handle user interface and interaction
     // Display analysis results and treatment recommendations
   };
 
-  // Function to handle system integration with existing healthcare systems
-  const integrateWithHealthcareSystems = () => {
-    // Code to integrate with electronic health records
-    // and hospital information systems
-    // Facilitate data exchange and retrieval
-  };
 
   return (
-    <div>
+    <div className='back'>
       <h2>Personalized Healthcare</h2>
       <p>
-        The AI recommendation system for personalized healthcare treatments needs the following functional requirements:
+        The AI recommendation system for personalized healthcare treatments
       </p>
       
       <button onClick={collectAndIntegrateData}>Collect and Integrate Data</button>
       <button onClick={analyzeDataAndGenerateRecommendations}>Analyze Data and Generate Recommendations</button>
       <button onClick={handleUserInteraction}>User Interface and Interaction</button>
-      <button onClick={integrateWithHealthcareSystems}>System Integration</button>
 
       {/* Display patient data */}
       {patientData && (
@@ -93,7 +89,8 @@ const PersonalizedHealthcare = () => {
       )}
 
       {/* Access and use values from the context */}
-      <p>App Name: {state.appName}</p>
+      <p>{state.appName}</p>
+      <p>Here to serve you</p>
       <img src={state.appLogo} className='logo-image' alt="App Logo" />
     </div>
   );

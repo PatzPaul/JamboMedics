@@ -56,7 +56,6 @@ function DesktopApp() {
     <Context.Provider value={value}>
       <BrowserRouter>
         <RouteElementsDesktop />
-        <Predict />
       </BrowserRouter>
     </Context.Provider>
   )
@@ -71,7 +70,7 @@ function App() {
   } else {
     return (
       <Fragment>
-        <DesktopApp />
+        <DesktopApp></DesktopApp>
         <ChatsPage user={user} />
       </Fragment>
     );

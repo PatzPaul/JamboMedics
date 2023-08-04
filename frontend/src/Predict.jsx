@@ -25,7 +25,7 @@ function Predict() {
       <div>
         {predictions.map((prediction, index) => (
           <p key={index}>{prediction}</p>
-        ))}
+        ))}   
       </div>
     </div>
   );

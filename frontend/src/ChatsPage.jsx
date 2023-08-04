@@ -1,40 +1,47 @@
-//import { MultiChatSocket, MultiChatWindow, UseMultiChatLogic } from 'react-chat-engine-advanced'
 import { useEffect, Fragment } from "react";
+import PersonalizedHealthcare from "./PersonalizedHealthcare";
+
+// Define a separate functional component to render the chatbot
+const ChatBotRenderer = () => {
+  return (
+    <Fragment>
+      <div>
+        {/*Healthcare list */}
+          <PersonalizedHealthcare />
+        
+        <h1>Welcome, Try Our Personalized Treatments below</h1>
+      </div>
+      <iframe
+        src="https://www.chatbase.co/chatbot-iframe/xPsKM5kOYPN9D_xGUTwLC"
+        width="100%"
+        style={{ height: "100%", minHeight: "700px", border: "0" }}
+      ></iframe>
+    </Fragment>
+  );
+};
+
 const ChatsPage = () => {
   useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://www.chatbase.co/embed.min.js';
-    script.id = '89SpUHRfC5DNJ7WjP7z7o';
+    const script = document.createElement("script");
+    script.src = "https://www.chatbase.co/embed.min.js";
+    script.id = "xPsKM5kOYPN9D_xGUTwLC";
     script.defer = true;
     document.body.appendChild(script);
 
     window.chatbaseConfig = {
-      chatbotId: "89SpUHRfC5DNJ7WjP7z7o",
-    }
+      chatbotId: "xPsKM5kOYPN9D_xGUTwLC",
+    };
 
-    // const chatProps = useMultiChatLogic('72d84f8a-83fc-435b-905f-e3717ad5086b', 
-    //props.user.username,
-    //props.user.secret
     return () => {
-      <Fragment>
-        <div><h1>Welcome ,{username}</h1></div>
-        chats...
-        // Remove the script when the component is unmounted
-        document.body.removeChild(script);
-
-        <iframe
-          src="https://www.chatbase.co/chatbot-iframe/89SpUHRfC5DNJ7WjP7z7o"
-          width="100%"
-          height="700"
-          frameborder="0"
-        ></iframe>
-
-
-
-      </Fragment>
-
-    }
+      // Remove the script when the component is unmounted
+      document.body.removeChild(script);
+    };
   }, []);
+
+  // Define the username (replace 'John Doe' with the actual username)
+// const username = "John Doe";
+
+  return <ChatBotRenderer />;
 };
 
 export default ChatsPage;
