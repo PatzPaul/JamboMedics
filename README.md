@@ -57,7 +57,7 @@ To run the frontend, follow these steps:
 - Start the frontend:
 
   ```bash
-  npm start
+  npm run dev
   ```
 
 Alternatively, if you have Docker installed and working, you can proceed with the following steps:
